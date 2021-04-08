@@ -166,7 +166,7 @@ def taka_10(img_path):
 
     def matching_processing(copy_image, step):
         for j in range(0, 5):
-            matching_image(cv2.imread("Image/Cutting/taka_10/" + train_image_name[step][j] + ".jpg",
+            matching_image(cv2.imread("static/Cutting/taka_10/" + train_image_name[step][j] + ".jpg",
                                       cv2.IMREAD_GRAYSCALE),
                            copy_image, step + 1)
 
@@ -358,7 +358,7 @@ def taka_20(img_path):
 
     def matching_processing(copy_image, step):
         for j in range(0, 6):
-            matching_image(cv2.imread("Image/Cutting/taka_20/" + train_image_name[step][j] + ".jpg",
+            matching_image(cv2.imread("static/Cutting/taka_20/" + train_image_name[step][j] + ".jpg",
                                       cv2.IMREAD_GRAYSCALE),
                            copy_image, step + 1)
             
@@ -558,7 +558,7 @@ def taka_50(img_path):
 
     def matching_processing(copy_image, step):
         for j in range(0, 6):
-            matching_image(cv2.imread("Image/Cutting/taka_50/" + train_image_name[step][j] + ".jpg",
+            matching_image(cv2.imread("static/Cutting/taka_50/" + train_image_name[step][j] + ".jpg",
                                       cv2.IMREAD_GRAYSCALE),
                            copy_image, step + 1)
             # cv2.imshow("test_image - " + str(step) + " - " + str(j), tes_img[step][j])
@@ -751,7 +751,7 @@ def taka_100(img_path):
 
     def matching_processing(copy_image, step):
         for j in range(0, 7):
-            matching_image(cv2.imread("Image/Cutting/taka_100/" + train_image_name[step][j] + ".jpg",
+            matching_image(cv2.imread("static/Cutting/taka_100/" + train_image_name[step][j] + ".jpg",
                                       cv2.IMREAD_GRAYSCALE),
                            copy_image, step + 1)
             # cv2.imshow("test_image - " + str(step) + " - " + str(j), tes_img[step][j])
@@ -944,7 +944,7 @@ def taka_200(img_path):
 
     def matching_processing(copy_image, step):
         for j in range(0, 6):
-            matching_image(cv2.imread("Image/Cutting/taka_200/" + train_image_name[step][j] + ".jpg",
+            matching_image(cv2.imread("static/Cutting/taka_200/" + train_image_name[step][j] + ".jpg",
                                       cv2.IMREAD_GRAYSCALE),
                            copy_image, step + 1)
             # cv2.imshow("test_image - " + str(step) + " - " + str(j), tes_img[step][j])
@@ -1137,7 +1137,7 @@ def taka_500(img_path):
 
     def matching_processing(copy_image, step):
         for j in range(0, 5):
-            matching_image(cv2.imread("Image/Cutting/taka_500/" + train_image_name[step][j] + ".jpg",
+            matching_image(cv2.imread("static/Cutting/taka_500/" + train_image_name[step][j] + ".jpg",
                                       cv2.IMREAD_GRAYSCALE),
                            copy_image, step + 1)
             
@@ -1328,7 +1328,7 @@ def taka_1000(img_path):
 
     def matching_processing(copy_image, step):
         for j in range(0, 6):
-            matching_image(cv2.imread("Image/Cutting/taka_1000/" + train_image_name[step][j] + ".jpg",
+            matching_image(cv2.imread("static/Cutting/taka_1000/" + train_image_name[step][j] + ".jpg",
                                       cv2.IMREAD_GRAYSCALE),
                            copy_image, step + 1)
             
