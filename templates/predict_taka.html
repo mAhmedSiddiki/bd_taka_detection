@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Worenci - Predict Money</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="static/img/favicon.png" rel="icon">
+  <link href="static/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+  <!-- Vendor CSS Files -->
+  <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="static/vendor/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="static/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="static/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="static/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container">
+
+      <div class="logo float-left">
+        <!-- Uncomment below if you prefer to use an text logo -->
+        <!-- <h1><a href="index.html">NewBiz</a></h1> -->
+        <a href="/"><img src="static/img/logo.png" alt="" class="img-fluid"></a>
+      </div>
+
+      <nav class="main-nav float-right d-none d-lg-block">
+        <ul>
+          <li><a href="#services">Security Features</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header><!-- #header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+      {% if ori_fake == "Original Note" %}
+      <div class="container" style="background-color: rgb(163, 255, 163); border-radius: 20px; padding: 10px; border-color: green; border-style: solid;">
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <h2 style="color: black;">{{ori_fake}}</h2>
+          </div>
+          
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li>Predict</li>
+          </ol>
+        </div>
+      </div>
+
+      {% elif ori_fake == "Fake Note" %}
+      <div class="container" style="background-color: rgb(255, 163, 163); border-radius: 20px; padding: 10px; border-color: red; border-style: solid;">
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <h2 style="color: black;">{{ori_fake}}</h2>
+          </div>
+        
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li>Predict</li>
+          </ol>
+        </div>
+      </div>
+      {% endif %}
+    </section><!-- End Breadcrumbs Section -->
+
+    <section class="inner-page pt-4">
+      <div class="container">
+        <div class="row justify-content-around">
+          <div class="col-lg-5">
+            <br>
+            {% if ori_fake == "Original Note" %}
+            <img src="{{ user_image }}" alt="" style="display: block; margin-left: auto; margin-right: auto; width: 100%; border-radius: 40px; box-shadow: 0px 0px 20px 15px rgb(163, 255, 163);">
+            {% elif ori_fake == "Fake Note" %}
+            <img src="{{ user_image }}" alt="" style="display: block; margin-left: auto; margin-right: auto; width: 100%; border-radius: 40px; box-shadow: 0px 0px 20px 15px rgb(255, 163, 163);">
+            {% endif %}
+            <br>
+          </div>
+          <div class="col-lg-5 align-self-center" style="background-color: #ECF5FE; border-radius: 40px;"><br>
+            <h5 style="color: black; text-align: justify;">Your selected note is <strong>{{pred_output}}</strong> and this is a <strong>Bangladeshi</strong> currency.</h5>
+            {% if pred_output == "500 Taka" %}
+            <h5 style="color: black; text-align: justify;">আপনার নির্বাচিত নোটটি <strong>৫০০ টাকা</strong> এবং এটি একটি <strong>বাংলাদেশি</strong> মুদ্রা।</h5>
+            {% elif pred_output == "50 Taka" %}
+            <h5 style="color: black; text-align: justify;">আপনার নির্বাচিত নোটটি <strong>৫০ টাকা</strong> এবং এটি একটি <strong>বাংলাদেশি</strong> মুদ্রা।</h5>
+            {% elif pred_output == "5 Taka" %}
+            Comming Soon
+            {% elif pred_output == "200 Taka" %}
+            <h5 style="color: black; text-align: justify;">আপনার নির্বাচিত নোটটি <strong>২০০ টাকা</strong> এবং এটি একটি <strong>বাংলাদেশি</strong> মুদ্রা।</h5>
+            {% elif pred_output == "20 Taka" %}
+            <h5 style="color: black; text-align: justify;">আপনার নির্বাচিত নোটটি <strong>২০ টাকা</strong> এবং এটি একটি <strong>বাংলাদেশি</strong> মুদ্রা।</h5>
+            {% elif pred_output == "2 Taka" %}
+            Comming Soon
+            {% elif pred_output == "1000 Taka" %}
+            <h5 style="color: black; text-align: justify;">আপনার নির্বাচিত নোটটি <strong>১০০০ টাকা</strong> এবং এটি একটি <strong>বাংলাদেশি</strong> মুদ্রা।</h5>
+            {% elif pred_output == "100 Taka" %}
+            <h5 style="color: black; text-align: justify;">আপনার নির্বাচিত নোটটি <strong>১০০ টাকা</strong> এবং এটি একটি <strong>বাংলাদেশি</strong> মুদ্রা।</h5>
+            {% elif pred_output == "10 Taka" %}
+            <h5 style="color: black; text-align: justify;">আপনার নির্বাচিত নোটটি <strong>১০ টাকা</strong> এবং এটি একটি <strong>বাংলাদেশি</strong> মুদ্রা।</h5>
+            {% elif pred_output == "1 Taka" %}
+            Comming Soon
+            {% endif %}
+          </div>
+        </div><br>
+      </div>
+    </section>
+
+
+
+
+
+
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h3>Security Features</h3>
+          <p>The most important thing to pay attention to is the security features. Below are some of the features we have followed.</p>
+        </header>
+
+        <div class="row justify-content-center">
+
+          <div class="col-md-6 col-lg-5 align-self-center" data-aos="zoom-in" data-aos-delay="100">
+            <div class="box">
+              <div class="icon"><i class="ion-ios-world-outline" style="color: #ff689b;"></i></div>
+              <h4 class="title"><a>বাংলা ভাষায়</a></h4>
+              <p class="description" style="text-align: justify;">আমরা কিছু সিকিউরিটি ফিচার নিয়ে টাকাটা আসল নাকি নকল সেটা পরীক্ষা করেছি।</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="200">
+            {% if pred_output == "500 Taka" %}
+            <iframe src="https://drive.google.com/file/d/1VenYUC6guqCHt82LF1-RU-t1oaHdCNog/preview" style="width: 100%; height: 500px; border-radius: 10px; margin: 0 10px 40px 10px; box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1)"></iframe>
+            {% elif pred_output == "50 Taka" %}
+            <iframe src="https://drive.google.com/file/d/1maGxro37vs8lQu4_cB8mvU3ggJa0WqXc/preview" style="width: 100%; height: 500px; border-radius: 10px; margin: 0 10px 40px 10px; box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1)"></iframe>
+            {% elif pred_output == "5 Taka" %}
+            Comming Soon
+            {% elif pred_output == "200 Taka" %}
+            <iframe src="https://drive.google.com/file/d/12dUrMhdpxpjhUc8wa8LF5ujTIJrPzmID/preview" style="width: 100%; height: 500px; border-radius: 10px; margin: 0 10px 40px 10px; box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1)"></iframe>
+            {% elif pred_output == "20 Taka" %}
+            <iframe src="https://drive.google.com/file/d/1cyEFCME35TV1fL6B1EsTYLprIC1v81TW/preview" style="width: 100%; height: 500px; border-radius: 10px; margin: 0 10px 40px 10px; box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1)"></iframe>
+            {% elif pred_output == "2 Taka" %}
+            Comming Soon
+            {% elif pred_output == "1000 Taka" %}
+            <iframe src="https://drive.google.com/file/d/1R9j-l9GqsM5XKeAjVT8N82d2xcc2JlZe/preview" style="width: 100%; height: 500px; border-radius: 10px; margin: 0 10px 40px 10px; box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1)"></iframe>
+            {% elif pred_output == "100 Taka" %}
+            <iframe src="https://drive.google.com/file/d/1OkwQEghPNJeENTENKgvz_yVu2lmWhl5H/preview" style="width: 100%; height: 500px; border-radius: 10px; margin: 0 10px 40px 10px; box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1)"></iframe>
+            {% elif pred_output == "10 Taka" %}
+            <iframe src="https://drive.google.com/file/d/1iZOdXePgNYBkN_6qskxrj0SiErpJ7FWn/preview" style="width: 100%; height: 500px; border-radius: 10px; margin: 0 10px 40px 10px; box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1)"></iframe>
+            {% elif pred_output == "1 Taka" %}
+            Comming Soon
+            {% endif %}
+          </div>
+
+          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="200">
+            {% if pred_output == "500 Taka" %}
+            <iframe src="https://drive.google.com/file/d/1vQrx4Nq8REf7gkMbmo3s_EXE76tX1gGU/preview" style="width: 100%; height: 500px; border-radius: 10px; margin: 0 10px 40px 10px; box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1)"></iframe>
+            {% elif pred_output == "50 Taka" %}
+            <iframe src="https://drive.google.com/file/d/1IkbJxtQXR7y0OwKRm9UMUZEzswCz5PQY/preview" style="width: 100%; height: 500px; border-radius: 10px; margin: 0 10px 40px 10px; box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1)"></iframe>
+            {% elif pred_output == "5 Taka" %}
+            Comming Soon
+            {% elif pred_output == "200 Taka" %}
+            <iframe src="https://drive.google.com/file/d/1rzYDZmshU75OTmBJJtYcZ4liR3VKOk3k/preview" style="width: 100%; height: 500px; border-radius: 10px; margin: 0 10px 40px 10px; box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1)"></iframe>
+            {% elif pred_output == "20 Taka" %}
+            <iframe src="https://drive.google.com/file/d/1VLLOrhDhQ_iCR6XJ2ASGxQWBIKwNjaWA/preview" style="width: 100%; height: 500px; border-radius: 10px; margin: 0 10px 40px 10px; box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1)"></iframe>
+            {% elif pred_output == "2 Taka" %}
+            Comming Soon
+            {% elif pred_output == "1000 Taka" %}
+            <iframe src="https://drive.google.com/file/d/1Chi1e2gkahRc-mNXr8-4Ah0HJXiGLBxu/preview" style="width: 100%; height: 500px; border-radius: 10px; margin: 0 10px 40px 10px; box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1)"></iframe>
+            {% elif pred_output == "100 Taka" %}
+            <iframe src="https://drive.google.com/file/d/1zUF4AKbZtENSM5K4P9COYy0-B-F7sXgm/preview" style="width: 100%; height: 500px; border-radius: 10px; margin: 0 10px 40px 10px; box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1)"></iframe>
+            {% elif pred_output == "10 Taka" %}
+            <iframe src="https://drive.google.com/file/d/1NUGBlRapX_M2OrrHAUcdLbKb09Tkwpk0/preview" style="width: 100%; height: 500px; border-radius: 10px; margin: 0 10px 40px 10px; box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1)"></iframe>
+            {% elif pred_output == "1 Taka" %}
+            Comming Soon
+            {% endif %}
+          </div>
+          <div class="col-md-6 col-lg-5 align-self-center" data-aos="zoom-in" data-aos-delay="100">
+            <div class="box">
+              <div class="icon"><i class="ion-ios-world-outline" style="color: #3fcdc7;"></i></div>
+              <h4 class="title"><a>In English</a></h4>
+              <p class="description">We have checked with some security features whether the money is real or fake.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Services Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top" style="background: #00366F;">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 footer-info">
+            <h3>worenci</h3>
+            <p style="text-align: justify;">We make all kinds of systems with money. And the systems we create are all based on artificial intelligence. We are currently working only with Bangladeshi money. We want to work with the money of all the countries of the world. We try to do all our work through artificial intelligence. Because with artificial intelligence, people can do things much easier.</p>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="map mb-4 mb-lg-0">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d233667.82239225012!2d90.2792376798145!3d23.780887456315867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b087026b81%3A0x8fa563bbdd5904c2!2sDhaka!5e0!3m2!1sen!2sbd!4v1617622864215!5m2!1sen!2sbd" frameborder="0" style="border:0; width: 100%; height: 250px;" allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact align-self-center">
+            <h4>Contact Us</h4>
+            <p>
+              Dhaka <br>
+              Bangladesh<br>
+              <strong>Email:</strong> worenci21@gmail.com<br>
+            </p>
+
+            <div class="social-links">
+              <a target="_blank" href="https://www.facebook.com/worenci" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a target="_blank" href="https://www.linkedin.com/company/worenci" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>Worenci</strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a target="_blank" href="https://marjukahmedsiddiki.blogspot.com/p/about-me.html">Marjuk Ahmed Siddiki</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="static/vendor/jquery/jquery.min.js"></script>
+  <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="static/vendor/php-email-form/validate.js"></script>
+  <script src="static/vendor/counterup/counterup.min.js"></script>
+  <script src="static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="static/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="static/vendor/venobox/venobox.min.js"></script>
+  <script src="static/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/js/main.js"></script>
+
+</body>
+
+</html>
